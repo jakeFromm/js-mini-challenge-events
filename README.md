@@ -26,7 +26,7 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+I tried passing the helper function as an argument of the event listener, but that didn't work, so I included it in the body of the event listener function and passed the header as the argument for the toggleColor function.
 ```
 
 ## Deliverable 2: Create Player

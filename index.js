@@ -40,7 +40,33 @@ function toggleColor(element) {
   }
 }
 
+let header = document.querySelector("h1#header")
+header.addEventListener("click", function(){
+  toggleColor(header)
+})
+
 
 /***** Deliverable 2 *****/
+const form = document.querySelector("#new-player-form")
+form.onsubmit = function createPlayer(e) {
+  e.preventDefault()
+  let newPlayer =  {}
+  newPlayer.name = form.name.value
+  newPlayer.nickname = form.nickname.value
+  newPlayer.photo = form.photo.value
+  newPlayer.number = form.number.value
+  renderPlayer(newPlayer)
+}
 
 /***** Deliverable 3 *****/
+const likeButtons = document.querySelectorAll(".like-button")
+for(const button of likeButtons)
+  button.addEventListener("click", function(e){
+    const button = e.target
+    const parentDiv = button.parentElement
+    const likes = parentDiv.querySelector(".likes")
+    const currentLikes = parseInt(likes.textContent)
+    const newLikes = currentLikes + 1
+    likes.textContent = `${newLikes} likes`
+})
+
